@@ -1,42 +1,42 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+// import { ref } from 'vue'
 import { Mail, Linkedin, Github } from 'lucide-vue-next'
 import { profile } from '@/data/profile'
 
-type SubmitState = 'idle' | 'sending' | 'success' | 'error'
+// type SubmitState = 'idle' | 'sending' | 'success' | 'error'
 
-const name = ref('')
-const email = ref('')
-const message = ref('')
-const state = ref<SubmitState>('idle')
+// const name = ref('')
+// const email = ref('')
+// const message = ref('')
+// const state = ref<SubmitState>('idle')
 
-function encodeForm(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&')
-}
+// function encodeForm(data: Record<string, string>) {
+//   return Object.keys(data)
+//     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+//     .join('&')
+// }
 
-async function handleSubmit() {
-  state.value = 'sending'
-  try {
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeForm({
-        'form-name': 'contact',
-        name: name.value,
-        email: email.value,
-        message: message.value,
-      }),
-    })
-    state.value = 'success'
-    name.value = ''
-    email.value = ''
-    message.value = ''
-  } catch {
-    state.value = 'error'
-  }
-}
+// async function handleSubmit() {
+//   state.value = 'sending'
+//   try {
+//     await fetch('/', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//       body: encodeForm({
+//         'form-name': 'contact',
+//         name: name.value,
+//         email: email.value,
+//         message: message.value,
+//       }),
+//     })
+//     state.value = 'success'
+//     name.value = ''
+//     email.value = ''
+//     message.value = ''
+//   } catch {
+//     state.value = 'error'
+//   }
+// }
 </script>
 
 <template>

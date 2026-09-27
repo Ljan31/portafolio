@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { Github, Linkedin, Download, ArrowRight } from 'lucide-vue-next'
+// import { Github, Linkedin, Download, ArrowRight } from 'lucide-vue-next'
+import { Github, Linkedin, ArrowRight } from 'lucide-vue-next'
 import { profile } from '@/data/profile'
 </script>
 
